@@ -14,8 +14,8 @@ function getEntrySources(sources) {
 module.exports = {
     entry: {
         js: getEntrySources([
-        	'./js',
-        	'./sass/main.sass'
+        	'./src/js',
+        	'./src/sass/main.sass'
         ])
     },
     output: {
@@ -31,7 +31,7 @@ module.exports = {
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
-			template: 'html/main.html'
+			template: './src/html/main.html'
 		}),
 	]
 
