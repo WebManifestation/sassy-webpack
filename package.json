@@ -5,7 +5,7 @@
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --progress --colors",
+    "start": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --progress --colors",
     "build": "NODE_ENV=production ./node_modules/webpack/bin/webpack.js -p"
   },
   "repository": {
