@@ -8,7 +8,7 @@ menuIcon.click(function() {
 	if (nav.hasClass('open')) {
 		nav.addClass('close');
 		nav.removeClass('open');
-	} else if(nav.hasClass('close')) {
+	} else {
 		nav.addClass('open');
 		nav.removeClass('close');
 	}

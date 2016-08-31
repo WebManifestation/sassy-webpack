@@ -33,10 +33,10 @@ nav
 			right: 0
 
 		.fa-times
-			opacity: 1
+			opacity: 0
 		.fa-bars
 			padding-top: 4px
-			opacity: 0
+			opacity: 1
 
 	ul
 		margin: 0
@@ -67,9 +67,9 @@ nav.open
 	
 	#menu-icon
 		.fa-times
-			animation: inLeft $iconAnimate ease-in-out
+			animation: inLeft $iconAnimate ease-in-out forwards
 		.fa-bars
-			animation: outRight $iconAnimate ease-in-out
+			animation: outRight $iconAnimate ease-in-out forwards
 
 nav.close
 	animation: navClose $navAnimate ease-in-out
