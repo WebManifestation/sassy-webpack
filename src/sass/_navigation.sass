@@ -1,0 +1,129 @@
+$width: 200px
+
+nav
+	background: $primary-color
+	position: fixed
+	height: 100%
+	// width: 200px
+	top: 0
+	left: -$width
+	box-shadow: -4px 4px 8px 0px rgba(0,0,0,0.2)
+	// +shadow-bottomRight(4px,4px,8px)
+	// display: flex
+	// opacity: 0
+
+	#menu-icon
+		// background: tomato
+		overflow: hidden
+		position: absolute
+		width: 40px
+		height: 40px
+		top: 0
+		right: -48px
+		text-align: center
+		font-size: 40px
+		padding: 4px
+		color: $primary-color
+
+		i
+			position: absolute
+			top: 0
+			bottom: 0
+			left: 0
+			right: 0
+
+		.fa-times
+			opacity: 1
+		.fa-bars
+			padding-top: 4px
+			opacity: 0
+
+	ul
+		margin: 0
+		list-style-type: none
+		padding: 0
+
+		li
+			font-size: 18px
+			letter-spacing: 4px
+			// font-weight: bold
+			min-width: 200px
+			padding: 16px 8px
+			padding-left: 32px
+			color: $primary-light
+		li.external
+			font-size: 16px
+		hr
+			margin-left: 16px
+			border-color: $primary-light
+			border-style: solid
+			border-width: 1px
+
+$navAnimate: 0.5s
+$iconAnimate: 1s
+
+nav.open
+	animation: navOpen $navAnimate ease-in-out forwards
+	
+	#menu-icon
+		.fa-times
+			animation: inLeft $iconAnimate ease-in-out
+		.fa-bars
+			animation: outRight $iconAnimate ease-in-out
+
+nav.close
+	animation: navClose $navAnimate ease-in-out
+
+	#menu-icon
+		.fa-times
+			animation: outLeft $iconAnimate ease-in-out forwards
+		.fa-bars
+			animation: inRight $iconAnimate ease-in-out forwards
+
+@keyframes navOpen
+	0%
+		transform: translateX(0)
+		box-shadow: -4px 4px 8px 0px rgba(0,0,0,0.2)
+	100%
+		transform: translateX($width)
+		box-shadow: 4px 4px 8px 0px rgba(0,0,0,0.2)
+
+@keyframes navClose
+	0%
+		transform: translateX($width)
+		box-shadow: 4px 4px 8px 0px rgba(0,0,0,0.2)
+	100%
+		transform: translateX(0)
+		box-shadow: -4px 4px 8px 0px rgba(0,0,0,0.2)
+
+@keyframes inLeft
+	0%
+		opacity: 0
+		transform: translateX(-56px)
+	100%
+		opacity: 1
+		transform: translateX(0)
+
+@keyframes outLeft
+	0%
+		opacity: 1
+		transform: translateX(0)
+	100%
+		opacity: 0
+		transform: translateX(-56px)
+
+@keyframes inRight
+	0%
+		opacity: 0
+		transform: translateX(56px)
+	100%
+		opacity: 1
+		transform: translateX(0)
+
+@keyframes outRight
+	0%
+		opacity: 1
+		transform: translateX(0)
+	100%
+		opacity: 0
+		transform: translateX(56px)

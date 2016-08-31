@@ -1,6 +1,7 @@
 // var fileContent = require("raw!./index.html");
 // require('./index.html');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var autoprefixer = require('autoprefixer');
 
 // require('!style!css!sass!./sass/main.sass');
 
@@ -25,10 +26,11 @@ module.exports = {
     loaders: [
 	    	{
                 test: /\.sass$/,
-                loaders: [ 'style', 'css', 'sass' ]
+                loaders: [ 'style', 'css', 'postcss-loader', 'sass' ]
             }
 	    ]
 	},
+    postcss: [ autoprefixer({ browsers: ['last 2 versions'] }) ],
 	plugins: [
 		new HtmlWebpackPlugin({
 			template: './src/html/main.html'
